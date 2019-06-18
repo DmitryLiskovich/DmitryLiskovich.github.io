@@ -1,23 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.d90a9507.chunk.css",
-    "main.js": "/portfolio/static/js/main.a47ab530.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.a47ab530.chunk.js.map",
-    "runtime~main.js": "/portfolio/static/js/runtime~main.f308c8e6.js",
-    "runtime~main.js.map": "/portfolio/static/js/runtime~main.f308c8e6.js.map",
-    "static/css/2.d0176e96.chunk.css": "/portfolio/static/css/2.d0176e96.chunk.css",
-    "static/js/2.b4985951.chunk.js": "/portfolio/static/js/2.b4985951.chunk.js",
-    "static/js/2.b4985951.chunk.js.map": "/portfolio/static/js/2.b4985951.chunk.js.map",
-    "index.html": "/portfolio/index.html",
-    "precache-manifest.7af644a4af742f9eb50b115559abe34f.js": "/portfolio/precache-manifest.7af644a4af742f9eb50b115559abe34f.js",
-    "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/2.d0176e96.chunk.css.map": "/portfolio/static/css/2.d0176e96.chunk.css.map",
-    "static/css/main.d90a9507.chunk.css.map": "/portfolio/static/css/main.d90a9507.chunk.css.map",
-    "static/media/about.scss": "/portfolio/static/media/work.cd693a49.jpg",
-    "static/media/nietzsche.jpg": "/portfolio/static/media/nietzsche.8df0e505.jpg",
-    "static/media/sidebar-1.jpg": "/portfolio/static/media/sidebar-1.8e9f0a3c.jpg",
-    "static/media/sidebar-2.jpg": "/portfolio/static/media/sidebar-2.310509c9.jpg",
-    "static/media/sidebar-3.jpg": "/portfolio/static/media/sidebar-3.25031690.jpg",
-    "static/media/sidebar-4.jpg": "/portfolio/static/media/sidebar-4.fc9cb053.jpg"
+    "main.css": "/weather/static/css/main.022e3c46.chunk.css",
+    "main.js": "/weather/static/js/main.aaece5a7.chunk.js",
+    "main.js.map": "/weather/static/js/main.aaece5a7.chunk.js.map",
+    "runtime~main.js": "/weather/static/js/runtime~main.6cff1e35.js",
+    "runtime~main.js.map": "/weather/static/js/runtime~main.6cff1e35.js.map",
+    "static/js/2.203d133c.chunk.js": "/weather/static/js/2.203d133c.chunk.js",
+    "static/js/2.203d133c.chunk.js.map": "/weather/static/js/2.203d133c.chunk.js.map",
+    "index.html": "/weather/index.html",
+    "precache-manifest.9f09b8138ccbfada25d0d35510a1eb35.js": "/weather/precache-manifest.9f09b8138ccbfada25d0d35510a1eb35.js",
+    "service-worker.js": "/weather/service-worker.js",
+    "static/css/main.022e3c46.chunk.css.map": "/weather/static/css/main.022e3c46.chunk.css.map",
+    "static/media/logo.svg": "/weather/static/media/logo.5d5d9eef.svg"
   }
 }
