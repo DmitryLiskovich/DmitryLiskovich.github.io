@@ -63,7 +63,7 @@ module.exports = "<div class=\"container\" style=\"margin-top: 2vh; margin-botto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top: 2vh; margin-bottom: 2vh\">\n  <div class=\"Row xs\">\n    <div class=\"Col\">\n      <div class=\"card\" style=\"width: 100%;\">\n        <img src=\"https://source.unsplash.com/1600x900/?nature,weather\" class=\"card-img-top\">\n        <div class=\"card-body\">\n          <form (submit)=\"getWeather($event, cityName)\" class=\"text-center\">\n            <div class=\"form-group\">\n              <label for='option'>Enter city name</label>\n              <br>\n              <input #cityName type=\"text\" id=\"option\" placeholder=\"London\" class=\"city-name\" style=\"width: 80%\">\n              <br>\n              <br>\n              <button type=\"submit\" class='btn btn-info'>Submit</button>\n            </div>\n          </form>\n        </div>\n        <div *ngIf=\"response\" class=\"card-body\">\n          <ul class=\"list-group list-group-flush\">\n              <li class=\"list-group-item\">City name: {{response.name}}</li>\n              <li class=\"list-group-item\">Temperature: {{response.main.temp}}&#176;C</li>\n              <li class=\"list-group-item\">Humidity: {{response.main.humidity}}%</li>\n              <li class=\"list-group-item\">Pressure: {{response.main.pressure}}Pv</li>\n              <li class=\"list-group-item\">Weather: {{response.weather[0].main}}</li>\n            </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\" style=\"margin-top: 2vh; margin-bottom: 2vh\">\n  <div class=\"Row xs\">\n    <div class=\"Col\">\n      <div class=\"card\" style=\"width: 100%;\">\n        <img src=\"https://source.unsplash.com/1600x900/?nature,weather\" class=\"card-img-top\">\n        <div class=\"card-body\">\n          <form (submit)=\"getWeather($event, cityName)\" class=\"text-center\">\n            <div class=\"form-group\">\n              <label for='option'>Enter city name</label>\n              <br>\n              <input #cityName type=\"text\" id=\"option\" placeholder=\"London\" class=\"city-name\" style=\"width: 80%\">\n              <br>\n              <br>\n              <button type=\"submit\" class='btn btn-info'>Submit</button>\n            </div>\n          </form>\n        </div>\n        <div *ngIf=\"response\" class=\"card-body\">\n          <ul class=\"list-group list-group-flush\">\n              <li class=\"list-group-item\">City name: {{response.name}}</li>\n              <li class=\"list-group-item\">Temperature: {{response.main.temp}}&#176;C</li>\n              <li class=\"list-group-item\">Humidity: {{response.main.humidity}}%</li>\n              <li class=\"list-group-item\">Pressure: {{response.main.pressure}}Pv</li>\n              <li class=\"list-group-item\">Weather: {{response.weather[0].main}} <img src=\"{{weatherIcon}}\" alt=\"\" class=\"weather-icon\"></li>\n            </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -330,7 +330,39 @@ __webpack_require__.r(__webpack_exports__);
 var WeatherComponent = /** @class */ (function () {
     function WeatherComponent(http) {
         this.http = http;
+        this.weather = {
+            clearsky: '01',
+            fewclouds: '02',
+            scatteredclouds: '03',
+            brokenclouds: '04',
+            overcastclouds: '04',
+            showerrain: '09',
+            rain: '10',
+            thunderstorm: '11',
+            snow: '13',
+            mist: '50'
+        };
     }
+    WeatherComponent.prototype.getIconFromId = function (id) {
+        if (id > 199 && id < 233)
+            return '11';
+        if (id > 299 && id < 322)
+            return '09';
+        if (id > 499 && id < 505)
+            return '10';
+        if (id == 511)
+            return '13';
+        if (id > 519 && id < 532)
+            return '09';
+        if (id > 599 && id < 623)
+            return '09';
+        if (id > 700 && id < 782)
+            return '09';
+        if (id == 800)
+            return '01';
+        if (id > 800 && id < 805)
+            return '04';
+    };
     WeatherComponent.prototype.getWeather = function ($event, cityName) {
         var _this = this;
         $event.preventDefault();
@@ -340,6 +372,13 @@ var WeatherComponent = /** @class */ (function () {
         var test = this.http.get("https://api.openweathermap.org/data/2.5/weather?q=" + cityName.value + "&appid=fec8b249edbf6232ae4e5957bd8e7ecf&units=metric")
             .subscribe(function (res) {
             _this.response = res;
+            if (res.hasOwnProperty('weather')) {
+                var weatherIcon = _this.getIconFromId(parseInt(res['weather'][0].id));
+                console.log(_this.getIconFromId(804));
+                res['dt'] < res['sys'].sunrise || res['dt'] > res['sys'].sunset ? weatherIcon += 'n' : weatherIcon += 'd';
+                weatherIcon = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
+                _this.weatherIcon = weatherIcon;
+            }
         }, function (err) { return alert('City not found or server disconnected'); });
     };
     WeatherComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
