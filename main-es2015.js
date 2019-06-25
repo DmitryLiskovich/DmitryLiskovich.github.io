@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class='angular-signe'><i class=\"fab fa-angular\"></i></div>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" routerLink='/wather'>Weather <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/about'>About</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/contacts'>Contacts</a>\r\n      </li>\r\n    </ul>\r\n    <form class=\"form-inline\">\r\n      <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\r\n      <button class=\"btn btn-outline-info my-2 my-sm-0\" type=\"submit\">Search</button>\r\n    </form>\r\n  </div>\r\n</nav>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class='angular-signe'><i class=\"fab fa-angular\"></i></div>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" routerLink='/weather'>Weather <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/about'>About</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/contacts'>Contacts</a>\r\n      </li>\r\n    </ul>\r\n    <form class=\"form-inline\">\r\n      <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\r\n      <button class=\"btn btn-outline-info my-2 my-sm-0\" type=\"submit\">Search</button>\r\n    </form>\r\n  </div>\r\n</nav>\r\n<main [@routeAnimations]='preperaRoute(outlet)'>\r\n  <router-outlet #outlet></router-outlet>\r\n</main>\r\n\r\n"
 
 /***/ }),
 
@@ -153,12 +153,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_weather_weather_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/weather/weather.component */ "./src/app/components/weather/weather.component.ts");
-/* harmony import */ var _components_about_about_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/about/about.component */ "./src/app/components/about/about.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _components_contacts_contacts_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/contacts/contacts.component */ "./src/app/components/contacts/contacts.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_weather_weather_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/weather/weather.component */ "./src/app/components/weather/weather.component.ts");
+/* harmony import */ var _components_about_about_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/about/about.component */ "./src/app/components/about/about.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _components_contacts_contacts_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/contacts/contacts.component */ "./src/app/components/contacts/contacts.component.ts");
+
 
 
 
@@ -170,29 +172,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const appRoutes = [
-    { path: 'weather', component: _components_weather_weather_component__WEBPACK_IMPORTED_MODULE_6__["WeatherComponent"] },
-    { path: 'about', component: _components_about_about_component__WEBPACK_IMPORTED_MODULE_7__["AboutComponent"] },
-    { path: 'contacts', component: _components_contacts_contacts_component__WEBPACK_IMPORTED_MODULE_9__["ContactsComponent"] },
-    { path: '**', redirectTo: 'weather' }
+    { path: 'weather', component: _components_weather_weather_component__WEBPACK_IMPORTED_MODULE_7__["WeatherComponent"] },
+    { path: 'about', component: _components_about_about_component__WEBPACK_IMPORTED_MODULE_8__["AboutComponent"] },
+    { path: 'contacts', component: _components_contacts_contacts_component__WEBPACK_IMPORTED_MODULE_10__["ContactsComponent"] },
+    { path: '**', redirectTo: 'about' }
 ];
 let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-            _components_weather_weather_component__WEBPACK_IMPORTED_MODULE_6__["WeatherComponent"],
-            _components_about_about_component__WEBPACK_IMPORTED_MODULE_7__["AboutComponent"],
-            _components_contacts_contacts_component__WEBPACK_IMPORTED_MODULE_9__["ContactsComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+            _components_weather_weather_component__WEBPACK_IMPORTED_MODULE_7__["WeatherComponent"],
+            _components_about_about_component__WEBPACK_IMPORTED_MODULE_8__["AboutComponent"],
+            _components_contacts_contacts_component__WEBPACK_IMPORTED_MODULE_10__["ContactsComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(appRoutes, { useHash: true })
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"].forRoot(appRoutes, { useHash: true })
         ],
         providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
     })
 ], AppModule);
 
@@ -324,9 +327,8 @@ let WeatherComponent = class WeatherComponent {
         }
         const test = this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=fec8b249edbf6232ae4e5957bd8e7ecf&units=metric`)
             .subscribe(res => {
-            console.log(res);
             this.response = res;
-        });
+        }, (err) => { return alert('City not found or server disconnected'); });
     }
 };
 WeatherComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
