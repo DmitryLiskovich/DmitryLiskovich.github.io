@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class='angular-signe'><i class=\"fab fa-angular\"></i></div>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" routerLink='/weather'>Weather <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/about'>About</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/contacts'>Contacts</a>\r\n      </li>\r\n    </ul>\r\n    <form class=\"form-inline\">\r\n      <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\r\n      <button class=\"btn btn-outline-info my-2 my-sm-0\" type=\"submit\">Search</button>\r\n    </form>\r\n  </div>\r\n</nav>\r\n<main [@routeAnimations]='preperaRoute(outlet)'>\r\n  <router-outlet #outlet></router-outlet>\r\n</main>\r\n\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class='angular-signe'><i class=\"fab fa-angular\"></i></div>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" routerLink='/weather'>Weather <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/about'>About</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/contacts'>Contacts</a>\r\n      </li>\r\n    </ul>\r\n    <form class=\"form-inline\">\r\n      <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\r\n      <button class=\"btn btn-outline-info my-2 my-sm-0\" type=\"submit\">Search</button>\r\n    </form>\r\n  </div>\r\n</nav>\r\n  <router-outlet #outlet></router-outlet>\r\n\r\n"
 
 /***/ }),
 
@@ -330,18 +330,6 @@ __webpack_require__.r(__webpack_exports__);
 var WeatherComponent = /** @class */ (function () {
     function WeatherComponent(http) {
         this.http = http;
-        this.weather = {
-            clearsky: '01',
-            fewclouds: '02',
-            scatteredclouds: '03',
-            brokenclouds: '04',
-            overcastclouds: '04',
-            showerrain: '09',
-            rain: '10',
-            thunderstorm: '11',
-            snow: '13',
-            mist: '50'
-        };
     }
     WeatherComponent.prototype.getIconFromId = function (id) {
         if (id > 199 && id < 233)
@@ -372,9 +360,9 @@ var WeatherComponent = /** @class */ (function () {
         var test = this.http.get("https://api.openweathermap.org/data/2.5/weather?q=" + cityName.value + "&appid=fec8b249edbf6232ae4e5957bd8e7ecf&units=metric")
             .subscribe(function (res) {
             _this.response = res;
+            console.log(typeof res);
             if (res.hasOwnProperty('weather')) {
                 var weatherIcon = _this.getIconFromId(parseInt(res['weather'][0].id));
-                console.log(_this.getIconFromId(804));
                 res['dt'] < res['sys'].sunrise || res['dt'] > res['sys'].sunset ? weatherIcon += 'n' : weatherIcon += 'd';
                 weatherIcon = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
                 _this.weatherIcon = weatherIcon;
